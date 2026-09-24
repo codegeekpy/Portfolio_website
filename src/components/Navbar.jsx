@@ -5,10 +5,9 @@ import {
   X, 
   Sun, 
   Moon, 
-  Mail,
   ArrowUpRight 
 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
 import { personalData } from '../data/portfolioData';
 
 export default function Navbar({ darkMode, setDarkMode, onOpenResume }) {
@@ -177,6 +176,40 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume }) {
             >
               <span>Get in Touch</span>
               <ArrowUpRight size={13} />
+            </a>
+          </div>
+
+          {/* Mobile Socials */}
+          <div className="pt-2 flex items-center justify-center gap-3 border-t border-zinc-200/80 dark:border-zinc-800/80">
+            <a
+              href={personalData.github}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/50 transition-colors"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <GithubIcon size={16} />
+            </a>
+            <a
+              href={personalData.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/50 transition-colors"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <LinkedinIcon size={16} />
+            </a>
+            <a
+              href={personalData.leetcode}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors"
+              aria-label="LeetCode Profile (190+ Solved)"
+              title="LeetCode (190+ Solved)"
+            >
+              <LeetcodeIcon size={16} />
             </a>
           </div>
         </div>

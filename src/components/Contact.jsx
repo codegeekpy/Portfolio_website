@@ -8,12 +8,11 @@ import {
   Check, 
   ArrowUpRight, 
   MessageSquare,
-  Sparkles,
   Loader2,
   AlertCircle,
   ExternalLink
 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
 import { personalData } from '../data/portfolioData';
 
 export default function Contact() {
@@ -211,12 +210,12 @@ export default function Contact() {
               {/* Social Channels */}
               <div className="pt-2 border-t border-zinc-100 dark:border-zinc-800">
                 <div className="text-xs font-mono text-zinc-400 mb-3">Professional Profiles:</div>
-                <div className="flex flex-col sm:flex-row gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   <a
                     href={personalData.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 flex items-center justify-between p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/40 text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 hover:border-emerald-500 transition-colors"
+                    className="flex items-center justify-between p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/40 text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 hover:border-emerald-500 transition-colors"
                   >
                     <span className="flex items-center gap-2">
                       <GithubIcon size={15} />
@@ -229,13 +228,29 @@ export default function Contact() {
                     href={personalData.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 flex items-center justify-between p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/40 text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 hover:border-emerald-500 transition-colors"
+                    className="flex items-center justify-between p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/40 text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 hover:border-emerald-500 transition-colors"
                   >
                     <span className="flex items-center gap-2">
                       <LinkedinIcon size={15} />
                       <span>LinkedIn</span>
                     </span>
                     <ArrowUpRight size={13} />
+                  </a>
+
+                  <a
+                    href={personalData.leetcode}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-between p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/40 text-xs font-mono text-zinc-700 dark:text-zinc-300 hover:text-amber-500 hover:border-amber-500 transition-colors"
+                  >
+                    <span className="flex items-center gap-2">
+                      <LeetcodeIcon size={15} />
+                      <span>LeetCode</span>
+                    </span>
+                    <div className="flex items-center gap-1">
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 font-mono">190+</span>
+                      <ArrowUpRight size={13} />
+                    </div>
                   </a>
                 </div>
               </div>

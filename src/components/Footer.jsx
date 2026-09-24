@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowUp, Mail, Phone, Heart } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { ArrowUp, Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
 import { personalData } from '../data/portfolioData';
 
 export default function Footer() {
@@ -38,6 +38,7 @@ export default function Footer() {
               rel="noreferrer"
               className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/50 transition-colors"
               aria-label="GitHub"
+              title="GitHub"
             >
               <GithubIcon size={15} />
             </a>
@@ -48,14 +49,27 @@ export default function Footer() {
               rel="noreferrer"
               className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/50 transition-colors"
               aria-label="LinkedIn"
+              title="LinkedIn"
             >
               <LinkedinIcon size={15} />
+            </a>
+
+            <a
+              href={personalData.leetcode}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-amber-500 hover:border-amber-500/50 transition-colors"
+              aria-label="LeetCode Profile (190+ Solved)"
+              title="LeetCode (190+ Solved)"
+            >
+              <LeetcodeIcon size={15} />
             </a>
 
             <a
               href={`mailto:${personalData.email}`}
               className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/50 transition-colors"
               aria-label="Email"
+              title="Email"
             >
               <Mail size={15} />
             </a>

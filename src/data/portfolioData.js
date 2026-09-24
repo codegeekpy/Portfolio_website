@@ -8,6 +8,8 @@ export const personalData = {
   phoneFormatted: "+91 63009 91762",
   github: "https://github.com/codegeekpy",
   linkedin: "https://www.linkedin.com/in/kashikuldeep",
+  leetcode: "https://leetcode.com/u/kashikuldeep/",
+  leetcodeQuestions: "190+",
   avatar: "/Profile2.jpeg",
   resumeUrl: "/Kashi_Kuldeep_Resume.pdf",
   status: "Open to opportunities",
@@ -17,6 +19,7 @@ export const personalData = {
 
 export const stats = [
   { label: "Role Experience", value: "Tech Lead", detail: "VISWAM AI" },
+  { label: "LeetCode Solved", value: "190+", detail: "Algorithms & DSA", url: "https://leetcode.com/u/kashikuldeep/" },
   { label: "Flagship Projects", value: "2+", detail: "DApps & GenAI" },
   { label: "Certifications", value: "6+", detail: "IBM, NPTEL, Cisco" },
   { label: "Hackathon Wins", value: "2", detail: "Ideathon & Avensis" },
@@ -124,6 +127,7 @@ export const skillCategories = [
       { name: "SQL", level: "Advanced" },
       { name: "Bash Scripting", level: "Proficient" },
       { name: "OOP & DSA", level: "Advanced" },
+      { name: "LeetCode (190+ Solved)", level: "Active" },
     ]
   },
   {

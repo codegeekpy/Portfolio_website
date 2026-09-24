@@ -6,12 +6,10 @@ import {
   Cpu, 
   Terminal, 
   Search, 
-  Sparkles,
-  Layers,
-  Database,
-  GitBranch
+  ArrowUpRight
 } from 'lucide-react';
-import { skillCategories } from '../data/portfolioData';
+import { LeetcodeIcon } from './SocialIcons';
+import { skillCategories, personalData } from '../data/portfolioData';
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -103,29 +101,65 @@ export default function Skills() {
         {/* Skills Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4 text-left">
           {filteredSkills.map((skill, index) => {
-            const Icon = categoryIcons[skill.category] || Terminal;
-            return (
-              <div
-                key={index}
-                className="group p-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/40 hover:border-emerald-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/80 transition-all flex flex-col justify-between shadow-xs"
-              >
+            const isLeetCode = skill.name.toLowerCase().includes('leetcode');
+            const Icon = isLeetCode ? LeetcodeIcon : (categoryIcons[skill.category] || Terminal);
+            
+            const cardInner = (
+              <>
                 <div className="flex items-start justify-between mb-3">
-                  <div className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 group-hover:text-emerald-500 transition-colors">
+                  <div className={`p-2 rounded-lg transition-colors ${
+                    isLeetCode 
+                      ? 'bg-amber-500/10 text-amber-500 group-hover:scale-105' 
+                      : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 group-hover:text-emerald-500'
+                  }`}>
                     <Icon size={16} />
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-500 dark:text-zinc-400">
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${
+                    isLeetCode
+                      ? 'border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold'
+                      : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-500 dark:text-zinc-400'
+                  }`}>
                     {skill.level}
                   </span>
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
-                    {skill.name}
+                  <h4 className={`text-sm font-semibold transition-colors flex items-center justify-between ${
+                    isLeetCode
+                      ? 'text-zinc-900 dark:text-white group-hover:text-amber-500 dark:group-hover:text-amber-400'
+                      : 'text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400'
+                  }`}>
+                    <span>{skill.name}</span>
+                    {isLeetCode && <ArrowUpRight size={13} className="text-amber-500 opacity-60 group-hover:opacity-100 transition-opacity" />}
                   </h4>
                   <p className="text-[11px] font-mono text-zinc-400 dark:text-zinc-500 mt-0.5 truncate">
                     {skill.category}
                   </p>
                 </div>
+              </>
+            );
+
+            if (isLeetCode) {
+              return (
+                <a
+                  key={index}
+                  href={personalData.leetcode}
+                  target="_blank"
+                  rel="noreferrer"
+                  title="View LeetCode Profile (190+ Solved)"
+                  className="group p-4 rounded-xl border border-amber-500/30 dark:border-amber-500/30 bg-white dark:bg-zinc-900/40 hover:border-amber-500/60 hover:bg-amber-500/5 dark:hover:bg-amber-500/5 transition-all flex flex-col justify-between shadow-xs cursor-pointer"
+                >
+                  {cardInner}
+                </a>
+              );
+            }
+
+            return (
+              <div
+                key={index}
+                className="group p-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/40 hover:border-emerald-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/80 transition-all flex flex-col justify-between shadow-xs"
+              >
+                {cardInner}
               </div>
             );
           })}

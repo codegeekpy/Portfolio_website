@@ -8,10 +8,9 @@ import {
   Check, 
   Copy, 
   Terminal, 
-  Sparkles,
-  ExternalLink 
+  Sparkles
 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './SocialIcons';
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
 import { personalData } from '../data/portfolioData';
 
 export default function Hero({ onOpenResume }) {
@@ -71,6 +70,16 @@ export default function Hero({ onOpenResume }) {
                 <Sparkles size={14} className="text-amber-500" />
                 <span>Ex-Tech Lead @ VISWAM AI</span>
               </div>
+              <a
+                href={personalData.leetcode}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 hover:border-amber-500/40 transition-colors"
+                title="LeetCode Profile - 190+ Questions Solved"
+              >
+                <LeetcodeIcon size={13} className="text-amber-500" />
+                <span>190+ LeetCode Solved</span>
+              </a>
             </div>
 
             {/* Action Buttons */}
@@ -111,6 +120,7 @@ export default function Hero({ onOpenResume }) {
                 rel="noreferrer"
                 className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/50 transition-all shadow-sm"
                 aria-label="GitHub Profile"
+                title="GitHub"
               >
                 <GithubIcon size={16} />
               </a>
@@ -121,14 +131,27 @@ export default function Hero({ onOpenResume }) {
                 rel="noreferrer"
                 className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/50 transition-all shadow-sm"
                 aria-label="LinkedIn Profile"
+                title="LinkedIn"
               >
                 <LinkedinIcon size={16} />
+              </a>
+
+              <a
+                href={personalData.leetcode}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400 hover:border-amber-500/50 transition-all shadow-sm"
+                aria-label="LeetCode Profile (190+ Solved)"
+                title="LeetCode (190+ Solved)"
+              >
+                <LeetcodeIcon size={16} />
               </a>
 
               <a
                 href={`mailto:${personalData.email}`}
                 className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/50 transition-all shadow-sm"
                 aria-label="Email"
+                title="Email"
               >
                 <Mail size={16} />
               </a>
@@ -137,6 +160,7 @@ export default function Hero({ onOpenResume }) {
                 href={`tel:${personalData.phone}`}
                 className="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/50 transition-all shadow-sm"
                 aria-label="Phone"
+                title="Phone"
               >
                 <Phone size={16} />
               </a>
