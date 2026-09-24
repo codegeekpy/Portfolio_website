@@ -78,9 +78,8 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-1">
             <span>Built with</span>
-            <span className="text-zinc-600 dark:text-zinc-400 font-semibold">React</span>
-            <span>&</span>
-            <span className="text-emerald-500 font-semibold">Tailwind CSS</span>
+            <span className="text-zinc-600 dark:text-zinc-400 font-semibold">❤️ by Kashi Kuldeep </span>
+
           </div>
         </div>
 
